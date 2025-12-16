@@ -1,0 +1,100 @@
+@page
+@model SuccessModel
+@{
+    ViewData["Title"] = "Procesamiento Exitoso - Fasecolda";
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/fasecolda-styles.css" />
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <div class="page-wrapper">
+        <div class="card">
+            <div class="success-container">
+                <!-- Icono de Éxito -->
+                <div class="success-icon">
+                    <i class="bi bi-check-circle-fill" style="color: var(--success);"></i>
+                </div>
+                
+                <!-- Título -->
+                <h1 class="success-title">¡Procesamiento Completado Exitosamente!</h1>
+                
+                <!-- Mensaje -->
+                <p class="success-message">@Model.Message</p>
+
+                <!-- Lista de Facturas Procesadas -->
+                @if (Model.FacturasProcesadas.Any())
+                {
+                    <div class="invoice-list">
+                        <h3 class="invoice-list-title">
+                            <i class="bi bi-file-earmark-text"></i>
+                            <span>Facturas procesadas correctamente:</span>
+                        </h3>
+                        <ul>
+                            @foreach (var factura in Model.FacturasProcesadas)
+                            {
+                                <li>
+                                    <i class="bi bi-check2"></i>
+                                    @factura
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                }
+
+                <!-- Lista de Advertencias/Errores -->
+                @if (Model.Errores.Any())
+                {
+                    <div class="error-list">
+                        <h3 class="error-list-title">
+                            <i class="bi bi-exclamation-triangle-fill"></i>
+                            <span>Advertencias:</span>
+                        </h3>
+                        <ul>
+                            @foreach (var error in Model.Errores)
+                            {
+                                <li>
+                                    <i class="bi bi-exclamation-circle"></i>
+                                    @error
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                }
+
+                <!-- Botones de Acción -->
+                <div class="button-group">
+                    <a href="@Model.RedirectUrl" target="_blank" class="btn btn-primary btn-lg">
+                        <i class="bi bi-box-arrow-up-right"></i>
+                        <span>Ir a Visual Vault</span>
+                    </a>
+                    <a href="/" class="btn btn-accent btn-lg">
+                        <i class="bi bi-arrow-repeat"></i>
+                        <span>Procesar más archivos</span>
+                    </a>
+                </div>
+
+                <!-- Footer -->
+                <div class="card-footer mt-5">
+                    <div class="logo-container">
+                        <img src="https://www.fasecolda.com/wp-content/themes/fasecolda/assets/img/logo-fasecolda.svg" 
+                             alt="Fasecolda Logo" 
+                             class="logo"
+                             style="max-width: 200px;" />
+                    </div>
+                    <p class="text-muted mt-3">
+                        Federación de Aseguradores de Colombia
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

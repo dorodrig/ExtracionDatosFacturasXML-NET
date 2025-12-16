@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía de Componentes - Fasecolda</title>
+    <link rel="stylesheet" href="css/fasecolda-styles.css">
+    <style>
+        .component-showcase {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: white;
+        }
+        .component-section {
+            margin-bottom: 3rem;
+            padding: 2rem;
+            border: 1px solid var(--gray-200);
+            border-radius: var(--border-radius-lg);
+        }
+        .component-section h2 {
+            color: var(--fasecolda-navy);
+            border-bottom: 3px solid var(--fasecolda-green);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .color-palette {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .color-swatch {
+            text-align: center;
+            padding: 1rem;
+            border-radius: var(--border-radius-md);
+            color: white;
+        }
+        .color-info {
+            font-size: 0.875rem;
+            margin-top: 0.5rem;
+        }
+        .example-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body style="background: var(--gray-50);">
+    <div class="component-showcase">
+        <h1 style="text-align: center; color: var(--fasecolda-navy); margin-bottom: 3rem;">
+            ?? Guía de Componentes - Fasecolda
+        </h1>
+
+        <!-- 1. PALETA DE COLORES -->
+        <div class="component-section">
+            <h2>1. Paleta de Colores Corporativos</h2>
+            
+            <h3>Colores Primarios</h3>
+            <div class="color-palette">
+                <div class="color-swatch" style="background: var(--fasecolda-navy);">
+                    <strong>Navy</strong>
+                    <div class="color-info">#1B3B6F</div>
+                </div>
+                <div class="color-swatch" style="background: var(--fasecolda-blue);">
+                    <strong>Azul</strong>
+                    <div class="color-info">#0066CC</div>
+                </div>
+                <div class="color-swatch" style="background: var(--fasecolda-green);">
+                    <strong>Verde</strong>
+                    <div class="color-info">#7ACC00</div>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 2rem;">Colores de Estado</h3>
+            <div class="color-palette">
+                <div class="color-swatch" style="background: var(--success);">
+                    <strong>Success</strong>
+                    <div class="color-info">#10B981</div>
+                </div>
+                <div class="color-swatch" style="background: var(--warning);">
+                    <strong>Warning</strong>
+                    <div class="color-info">#F59E0B</div>
+                </div>
+                <div class="color-swatch" style="background: var(--error);">
+                    <strong>Error</strong>
+                    <div class="color-info">#EF4444</div>
+                </div>
+                <div class="color-swatch" style="background: var(--info);">
+                    <strong>Info</strong>
+                    <div class="color-info">#3B82F6</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. BOTONES -->
+        <div class="component-section">
+            <h2>2. Botones</h2>
+            
+            <div class="example-grid">
+                <button class="btn btn-primary">
+                    <span>??</span>
+                    <span>Primario</span>
+                </button>
+                
+                <button class="btn btn-accent">
+                    <span>?</span>
+                    <span>Acento</span>
+                </button>
+                
+                <button class="btn btn-secondary">
+                    <span>??</span>
+                    <span>Secundario</span>
+                </button>
+                
+                <button class="btn btn-primary" disabled>
+                    <span>??</span>
+                    <span>Deshabilitado</span>
+                </button>
+            </div>
+
+            <h3 style="margin-top: 2rem;">Botones de tamaño completo</h3>
+            <button class="btn btn-primary btn-full btn-lg">
+                <span>??</span>
+                <span>Botón Grande - Ancho Completo</span>
+            </button>
+        </div>
+
+        <!-- 3. ALERTAS -->
+        <div class="component-section">
+            <h2>3. Alertas y Mensajes</h2>
+            
+            <div class="alert alert-success">
+                ? <strong>Éxito:</strong> La operación se completó correctamente.
+            </div>
+            
+            <div class="alert alert-error">
+                ? <strong>Error:</strong> Ha ocurrido un error al procesar la solicitud.
+            </div>
+            
+            <div class="alert alert-warning">
+                ?? <strong>Advertencia:</strong> Por favor revise la información ingresada.
+            </div>
+            
+            <div class="alert alert-info">
+                ?? <strong>Información:</strong> Los archivos se procesarán automáticamente.
+            </div>
+        </div>
+
+        <!-- 4. LISTA DE FACTURAS -->
+        <div class="component-section">
+            <h2>4. Lista de Facturas</h2>
+            
+            <div class="invoice-list">
+                <h3 class="invoice-list-title">
+                    <span>??</span>
+                    <span>Facturas procesadas correctamente:</span>
+                </h3>
+                <ul>
+                    <li>FACTURA-001 - $1.500.000</li>
+                    <li>FACTURA-002 - $2.300.000</li>
+                    <li>FACTURA-003 - $890.000</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 5. LISTA DE ERRORES -->
+        <div class="component-section">
+            <h2>5. Lista de Errores/Advertencias</h2>
+            
+            <div class="error-list">
+                <h3 class="error-list-title">
+                    <span>??</span>
+                    <span>Advertencias encontradas:</span>
+                </h3>
+                <ul>
+                    <li>archivo.xml: No se pudo extraer el NIT del proveedor</li>
+                    <li>factura2.xml: Formato de fecha incorrecto</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 6. TARJETA DE EJEMPLO -->
+        <div class="component-section">
+            <h2>6. Tarjeta de Contenido</h2>
+            
+            <div class="card" style="max-width: 600px; margin: 0 auto;">
+                <div class="card-header">
+                    <div class="logo-container">
+                        <img src="https://www.fasecolda.com/wp-content/themes/fasecolda/assets/img/logo-fasecolda.svg" 
+                             alt="Fasecolda Logo" 
+                             class="logo"
+                             style="max-width: 200px;" />
+                    </div>
+                    <h3 class="brand-title">Sistema de Facturas</h3>
+                    <p class="brand-subtitle">Federación de Aseguradores de Colombia</p>
+                </div>
+
+                <div class="card-body">
+                    <p>Este es un ejemplo de tarjeta con el diseño corporativo de Fasecolda.</p>
+                    <button class="btn btn-primary btn-full">
+                        <span>?</span>
+                        <span>Acción Principal</span>
+                    </button>
+                </div>
+
+                <div class="card-footer">
+                    <p class="text-muted">Información adicional en el footer</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 7. VALIDACIÓN -->
+        <div class="component-section">
+            <h2>7. Mensajes de Validación</h2>
+            
+            <div class="validation-summary">
+                <ul>
+                    <li>El campo 'Archivos' es obligatorio</li>
+                    <li>Solo se permiten archivos con extensión .xml</li>
+                    <li>El tamaño máximo por archivo es 10 MB</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 8. ICONOS DE ESTADO -->
+        <div class="component-section">
+            <h2>8. Iconos de Estado</h2>
+            
+            <div style="display: flex; gap: 2rem; justify-content: center; font-size: 3rem;">
+                <div style="text-align: center;">
+                    <div class="success-icon">?</div>
+                    <p style="font-size: 1rem;">Éxito</p>
+                </div>
+                <div style="text-align: center;">
+                    <div class="error-icon">?</div>
+                    <p style="font-size: 1rem;">Error</p>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 5rem;">??</div>
+                    <p style="font-size: 1rem;">Archivo</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 9. TIPOGRAFÍA -->
+        <div class="component-section">
+            <h2>9. Tipografía</h2>
+            
+            <h1>Heading 1 - Sistema de Facturas</h1>
+            <h2>Heading 2 - Procesamiento de XML</h2>
+            <h3>Heading 3 - Facturas Electrónicas</h3>
+            <h4>Heading 4 - VisualVault Integration</h4>
+            <h5>Heading 5 - Fasecolda</h5>
+            <h6>Heading 6 - Documentos</h6>
+            
+            <p>Texto de párrafo normal con <a href="#">un enlace</a> y <strong>texto en negrita</strong>.</p>
+            <p class="text-muted">Texto secundario o muted para información adicional.</p>
+        </div>
+
+        <!-- 10. SPINNER DE CARGA -->
+        <div class="component-section">
+            <h2>10. Indicador de Carga</h2>
+            
+            <button class="btn btn-primary" disabled>
+                <span class="spinner"></span>
+                <span class="loading-text">Procesando...</span>
+            </button>
+        </div>
+
+        <!-- 11. GRADIENTES -->
+        <div class="component-section">
+            <h2>11. Gradientes Corporativos</h2>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+                <div style="padding: 3rem; background: var(--gradient-primary); color: white; border-radius: var(--border-radius-lg); text-align: center;">
+                    <strong>Gradiente Primario</strong>
+                    <div style="font-size: 0.875rem; margin-top: 0.5rem;">Navy ? Azul</div>
+                </div>
+                <div style="padding: 3rem; background: var(--gradient-accent); color: white; border-radius: var(--border-radius-lg); text-align: center;">
+                    <strong>Gradiente Acento</strong>
+                    <div style="font-size: 0.875rem; margin-top: 0.5rem;">Verde ? Verde Claro</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <div style="text-align: center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--gray-200);">
+            <p class="text-muted">
+                Guía de Componentes - Sistema de Procesamiento de Facturas Electrónicas<br />
+                Federación de Aseguradores de Colombia - Fasecolda
+            </p>
+        </div>
+    </div>
+</body>
+</html>

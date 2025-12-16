@@ -1,0 +1,277 @@
+## ====================================================================
+## .gitignore para ASP.NET Core 8 - Fasecolda
+## Excluye archivos sensibles, compilados y temporales
+## ====================================================================
+
+## ====================================================================
+## ARCHIVOS SENSIBLES - NO SUBIR A GITHUB
+## ====================================================================
+
+# Archivos de configuración con credenciales
+appsettings.json
+appsettings.*.json
+!appsettings.Example.json
+
+# User Secrets
+secrets.json
+
+# Variables de entorno
+.env
+.env.local
+.env.*.local
+
+# Archivos de token/credenciales
+token.js
+tokens.txt
+credentials.txt
+*.pfx
+*.p12
+
+## ====================================================================
+## DIRECTORIOS DE BUILD Y PUBLICACIÓN
+## ====================================================================
+
+# Directorios de compilación
+[Bb]in/
+[Oo]bj/
+[Pp]ublish/
+[Ll]og/
+[Ll]ogs/
+
+# Directorio de publicación
+publish/
+out/
+
+# Archivos de caché de MSBuild
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+## ====================================================================
+## VISUAL STUDIO
+## ====================================================================
+
+# Visual Studio cache/options
+.vs/
+.vscode/
+
+# Visual Studio profiler
+*.psess
+*.vsp
+*.vspx
+*.sap
+
+# ReSharper
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+
+# JetBrains Rider
+.idea/
+*.sln.iml
+
+## ====================================================================
+## ARCHIVOS TEMPORALES Y DE USUARIO
+## ====================================================================
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Mono Auto Generated Files
+mono_crash.*
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# VS Code directories
+.vscode/
+
+## ====================================================================
+## NUGET
+## ====================================================================
+
+# NuGet Packages
+*.nupkg
+*.snupkg
+**/packages/*
+!**/packages/build/
+*.nuget.props
+*.nuget.targets
+
+# NuGet Symbol Packages
+*.snupkg
+
+## ====================================================================
+## ASP.NET CORE
+## ====================================================================
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# StyleCop
+StyleCopReport.xml
+
+# Files built by Visual Studio
+*_i.c
+*_p.c
+*_h.h
+*.ilk
+*.meta
+*.obj
+*.iobj
+*.pch
+*.pdb
+*.ipdb
+*.pgc
+*.pgd
+*.rsp
+*.sbr
+*.tlb
+*.tli
+*.tlh
+*.tmp
+*.tmp_proj
+*_wpftmp.csproj
+*.log
+*.tlog
+*.vspscc
+*.vssscc
+.builds
+*.pidb
+*.svclog
+*.scc
+
+## ====================================================================
+## NODE.JS (si se usa npm/webpack)
+## ====================================================================
+
+# Node modules
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Webpack
+dist/
+build/
+
+## ====================================================================
+## ARCHIVOS DE BASE DE DATOS LOCAL
+## ====================================================================
+
+*.mdf
+*.ldf
+*.ndf
+
+## ====================================================================
+## ARCHIVOS GENERADOS POR EL PROYECTO
+## ====================================================================
+
+# Archivos CSV generados
+datos.csv
+*.csv
+
+# Archivos temporales de facturas
+uploads/
+temp/
+tmp/
+
+# Archivos de prueba
+test-files/
+sample-data/
+
+## ====================================================================
+## DOCUMENTACIÓN Y EJEMPLOS (PERMITIDOS)
+## ====================================================================
+
+# Permitir archivos de documentación
+!README.md
+!CONFIGURACION_CRITICA.md
+!IDENTIDAD_VISUAL.md
+!*.md
+
+## ====================================================================
+## IIS
+## ====================================================================
+
+# IIS web.config (permitir el del proyecto, ignorar otros)
+# web.config
+
+## ====================================================================
+## AZURE
+## ====================================================================
+
+# Azure Functions
+local.settings.json
+
+## ====================================================================
+## RIDER
+## ====================================================================
+
+# JetBrains Rider
+.idea/
+*.sln.iml
+
+## ====================================================================
+## MACOS
+## ====================================================================
+
+.DS_Store
+.AppleDouble
+.LSOverride
+
+## ====================================================================
+## LINUX
+## ====================================================================
+
+*~
+
+# Temporary files which can be created if a process still has a handle open of a deleted file
+.fuse_hidden*
+
+# KDE directory preferences
+.directory
+
+# Linux trash folder
+.Trash-*
+
+## ====================================================================
+## WINDOWS
+## ====================================================================
+
+# Windows thumbnail cache files
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+
+# Dump file
+*.stackdump
+
+# Folder config file
+[Dd]esktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+
+# Windows shortcuts
+*.lnk

@@ -1,0 +1,110 @@
+@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Procesar Facturas XML - Fasecolda";
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/fasecolda-styles.css" />
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <div class="page-wrapper">
+        <div class="card">
+            <!-- Logo y Encabezado -->
+            <div class="card-header">
+                <div class="logo-container">
+                    <img src="https://www.fasecolda.com/wp-content/themes/fasecolda/assets/img/logo-fasecolda.svg" 
+                         alt="Fasecolda Logo" 
+                         class="logo" />
+                </div>
+                <h1 class="brand-title">Sistema de Procesamiento de Facturas</h1>
+                <p class="brand-subtitle">Federación de Aseguradores de Colombia</p>
+            </div>
+
+            <!-- Mensajes de Validación -->
+            @if (!ModelState.IsValid)
+            {
+                <div class="validation-summary">
+                    <ul>
+                        @foreach (var error in ModelState.Values.SelectMany(v => v.Errors))
+                        {
+                            <li>@error.ErrorMessage</li>
+                        }
+                    </ul>
+                </div>
+            }
+
+            <!-- Cuerpo del Formulario -->
+            <div class="card-body">
+                <form method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="Files" class="form-label form-label-required">
+                            Seleccione los archivos XML de facturas electrónicas
+                        </label>
+                        
+                        <div class="file-input-wrapper">
+                            <input type="file" 
+                                   id="Files" 
+                                   name="Files" 
+                                   multiple 
+                                   accept=".xml" 
+                                   required
+                                   onchange="updateFileList(this)" />
+                            <label for="Files" class="file-input-label">
+                                <i class="bi bi-cloud-arrow-up file-input-icon"></i>
+                                <span>Haga clic aquí o arrastre archivos XML</span>
+                            </label>
+                        </div>
+                        
+                        <div id="file-chosen" class="file-chosen"></div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-full btn-lg">
+                        <i class="bi bi-rocket-takeoff"></i>
+                        <span>Procesar Facturas Electrónicas</span>
+                    </button>
+                </form>
+
+                <div class="card-footer">
+                    <p class="text-muted">
+                        <i class="bi bi-shield-check"></i>
+                        Los archivos se procesarán de forma segura y se enviarán automáticamente a VisualVault.<br />
+                        No se almacenan archivos en el servidor.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function updateFileList(input) {
+            const fileChosenElement = document.getElementById('file-chosen');
+            
+            if (input.files.length === 0) {
+                fileChosenElement.classList.remove('active');
+                fileChosenElement.textContent = '';
+            } else if (input.files.length === 1) {
+                fileChosenElement.classList.add('active');
+                fileChosenElement.innerHTML = '<i class="bi bi-check-circle-fill"></i> ' + input.files[0].name;
+            } else {
+                fileChosenElement.classList.add('active');
+                fileChosenElement.innerHTML = '<i class="bi bi-check-circle-fill"></i> ' + input.files.length + ' archivos seleccionados';
+            }
+        }
+
+        // Prevenir submit doble
+        document.querySelector('form').addEventListener('submit', function(e) {
+            const submitBtn = this.querySelector('button[type="submit"]');
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<span class="spinner"></span><span class="loading-text">Procesando...</span>';
+        });
+    </script>
+</body>
+</html>
