@@ -46,6 +46,7 @@ if (!app.Environment.IsDevelopment())
     app.UseExceptionHandler("/Error");
     app.UseHsts();
 }
+app.UsePathBase("/extracion");
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
