@@ -42,6 +42,11 @@ credentials.txt
 publish/
 out/
 
+# Web publish
+publish/
+*.Publish.xml
+*.pubxml
+*.publishproj
 # Archivos de caché de MSBuild
 *.suo
 *.user
