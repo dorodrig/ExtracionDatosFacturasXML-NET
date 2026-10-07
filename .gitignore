@@ -19,7 +19,7 @@ secrets.json
 .env
 .env.local
 .env.*.local
-
+.env.production
 # Archivos de token/credenciales
 token.js
 tokens.txt
