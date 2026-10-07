@@ -46,7 +46,7 @@ if (!app.Environment.IsDevelopment())
     app.UseExceptionHandler("/Error");
     app.UseHsts();
 }
-app.UsePathBase("/extraccion");
+app.UsePathBase("/fasecolda/extracionFacturas");
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
