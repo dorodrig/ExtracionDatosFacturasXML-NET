@@ -1,7 +1,7 @@
-namespace ExtraerDatosFacturasXML.Models;
+﻿namespace ExtraerDatosFacturasXML.Models;
 
 /// <summary>
-/// Modelo que representa una factura electr�nica colombiana
+/// Modelo que representa una factura electrónica colombiana
 /// </summary>
 public class FacturaElectronica
 {

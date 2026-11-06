@@ -1,7 +1,7 @@
-namespace ExtraerDatosFacturasXML.Models;
+ï»¿namespace ExtraerDatosFacturasXML.Models;
 
 /// <summary>
-/// Configuración para la conexión con VisualVault API
+/// ConfiguraciÃ³n para la conexiÃ³n con VisualVault API
 /// </summary>
 public class VisualVaultSettings
 {

@@ -1,9 +1,9 @@
-using System.Text.Json.Serialization;
+ï»¿using System.Text.Json.Serialization;
 
 namespace ExtraerDatosFacturasXML.Models;
 
 /// <summary>
-/// Datos del formulario que se envía a VisualVault
+/// Datos del formulario que se envÃ­a a VisualVault
 /// IMPORTANTE: Los nombres de las propiedades JSON deben coincidir EXACTAMENTE con los campos de VisualVault
 /// </summary>
 public class VisualVaultFormData
@@ -32,8 +32,8 @@ public class VisualVaultFormData
     [JsonPropertyName("ddl_tipo de documetno")]
     public string ddl_tipo_de_documetno { get; set; } = "Factura";
 
-    [JsonPropertyName("Tipo de radicación")]
-    public string Tipo_de_radicacion { get; set; } = "Electrónica";
+    [JsonPropertyName("Tipo de radicaciÃ³n")]
+    public string Tipo_de_radicacion { get; set; } = "ElectrÃ³nica";
 
     [JsonPropertyName("Estado General")]
     public string Estado_General { get; set; } = "cargue realizado";

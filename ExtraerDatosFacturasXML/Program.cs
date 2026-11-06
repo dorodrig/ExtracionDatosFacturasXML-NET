@@ -1,4 +1,4 @@
-using ExtraerDatosFacturasXML.Models;
+ï»¿using ExtraerDatosFacturasXML.Models;
 using ExtraerDatosFacturasXML.Services;
 using Microsoft.AspNetCore.Http.Features;
 using Polly;
@@ -9,13 +9,13 @@ var builder = WebApplication.CreateBuilder(args);
 // Configurar servicios
 builder.Services.AddRazorPages();
 
-// Configurar límites de upload
+// Configurar lÃ­mites de upload
 builder.Services.Configure<FormOptions>(options =>
 {
     options.MultipartBodyLengthLimit = 104857600; // 100 MB
 });
 
-// Registrar configuración de VisualVault
+// Registrar configuraciÃ³n de VisualVault
 builder.Services.Configure<VisualVaultSettings>(
     builder.Configuration.GetSection("VisualVault")
 );

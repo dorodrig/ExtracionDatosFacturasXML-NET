@@ -1,4 +1,4 @@
-@page
+ï»¿@page
 @model SuccessModel
 @{
     ViewData["Title"] = "Procesamiento Exitoso - Fasecolda";
@@ -18,13 +18,13 @@
     <div class="page-wrapper">
         <div class="card">
             <div class="success-container">
-                <!-- Icono de Éxito -->
+                <!-- Icono de Ã‰xito -->
                 <div class="success-icon">
                     <i class="bi bi-check-circle-fill" style="color: var(--success);"></i>
                 </div>
                 
-                <!-- Título -->
-                <h1 class="success-title">¡Procesamiento Completado Exitosamente!</h1>
+                <!-- TÃ­tulo -->
+                <h1 class="success-title">Â¡Procesamiento Completado Exitosamente!</h1>
                 
                 <!-- Mensaje -->
                 <p class="success-message">@Model.Message</p>
@@ -69,15 +69,15 @@
                     </div>
                 }
 
-                <!-- Botones de Acción -->
+                <!-- Botones de AcciÃ³n -->
                 <div class="button-group">
                     <a href="@Model.RedirectUrl" target="_blank" class="btn btn-primary btn-lg">
                         <i class="bi bi-box-arrow-up-right"></i>
                         <span>Ir a Visual Vault</span>
                     </a>
-                    <a href="/" class="btn btn-accent btn-lg">
+                    <a href="@Url.Content("~/")" class="btn btn-accent btn-lg">
                         <i class="bi bi-arrow-repeat"></i>
-                        <span>Procesar más archivos</span>
+                        <span>Procesar mÃ¡s archivos</span>
                     </a>
                 </div>
 
@@ -90,7 +90,7 @@
                              style="max-width: 200px;" />
                     </div>
                     <p class="text-muted mt-3">
-                        Federación de Aseguradores de Colombia
+                        FederaciÃ³n de Aseguradores de Colombia
                     </p>
                 </div>
             </div>

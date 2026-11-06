@@ -1,4 +1,4 @@
-using ExtraerDatosFacturasXML.Models;
+﻿using ExtraerDatosFacturasXML.Models;
 using ExtraerDatosFacturasXML.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -60,7 +60,7 @@ public class IndexModel : PageModel
         catch (Exception ex)
         {
             _logger.LogError(ex, "Error inesperado al procesar archivos");
-            ModelState.AddModelError(string.Empty, "Ocurri� un error inesperado al procesar los archivos");
+            ModelState.AddModelError(string.Empty, "Ocurrió un error inesperado al procesar los archivos");
             return Page();
         }
     }

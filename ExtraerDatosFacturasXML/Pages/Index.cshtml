@@ -1,4 +1,4 @@
-@page
+Ôªø@page
 @model IndexModel
 @{
     ViewData["Title"] = "Procesar Facturas XML - Fasecolda";
@@ -25,10 +25,10 @@
                          class="logo" />
                 </div>
                 <h1 class="brand-title">Sistema de Procesamiento de Facturas</h1>
-                <p class="brand-subtitle">FederaciÛn de Aseguradores de Colombia</p>
+                <p class="brand-subtitle">Federaci√≥n de Aseguradores de Colombia</p>
             </div>
 
-            <!-- Mensajes de ValidaciÛn -->
+            <!-- Mensajes de Validaci√≥n -->
             @if (!ModelState.IsValid)
             {
                 <div class="validation-summary">
@@ -46,7 +46,7 @@
                 <form method="post" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="Files" class="form-label form-label-required">
-                            Seleccione los archivos XML de facturas electrÛnicas
+                            Seleccione los archivos XML de facturas electr√≥nicas
                         </label>
                         
                         <div class="file-input-wrapper">
@@ -59,7 +59,7 @@
                                    onchange="updateFileList(this)" />
                             <label for="Files" class="file-input-label">
                                 <i class="bi bi-cloud-arrow-up file-input-icon"></i>
-                                <span>Haga clic aquÌ o arrastre archivos XML</span>
+                                <span>Haga clic aqu√≠ o arrastre archivos XML</span>
                             </label>
                         </div>
                         
@@ -68,14 +68,14 @@
 
                     <button type="submit" class="btn btn-primary btn-full btn-lg">
                         <i class="bi bi-rocket-takeoff"></i>
-                        <span>Procesar Facturas ElectrÛnicas</span>
+                        <span>Procesar Facturas Electr√≥nicas</span>
                     </button>
                 </form>
 
                 <div class="card-footer">
                     <p class="text-muted">
                         <i class="bi bi-shield-check"></i>
-                        Los archivos se procesar·n de forma segura y se enviar·n autom·ticamente a VisualVault.<br />
+                        Los archivos se procesar√°n de forma segura y se enviar√°n autom√°ticamente a VisualVault.<br />
                         No se almacenan archivos en el servidor.
                     </p>
                 </div>

@@ -1,4 +1,4 @@
-using ExtraerDatosFacturasXML.Models;
+ï»¿using ExtraerDatosFacturasXML.Models;
 
 namespace ExtraerDatosFacturasXML.Services;
 
@@ -25,7 +25,7 @@ public class FacturaProcessingService
     }
 
     /// <summary>
-    /// Procesa múltiples archivos XML de facturas
+    /// Procesa mÃºltiples archivos XML de facturas
     /// </summary>
     public async Task<ProcessingResult> ProcessInvoicesAsync(IEnumerable<IFormFile> files)
     {
@@ -43,7 +43,7 @@ public class FacturaProcessingService
 
         _logger.LogInformation("Iniciando procesamiento de {Count} archivo(s)", result.TotalArchivos);
 
-        // Procesar archivos con límite de concurrencia
+        // Procesar archivos con lÃ­mite de concurrencia
         var semaphore = new SemaphoreSlim(_maxConcurrentProcessing);
         var tasks = files.Select(async file =>
         {
@@ -84,7 +84,7 @@ public class FacturaProcessingService
         result.Success = result.ArchivosExitosos > 0;
         result.Message = result.Success
             ? $"Procesamiento completado: {result.ArchivosExitosos} exitoso(s), {result.ArchivosFallidos} fallido(s)"
-            : "No se pudo procesar ningún archivo";
+            : "No se pudo procesar ningÃºn archivo";
 
         _logger.LogInformation(
             "Procesamiento finalizado: {Exitosos} exitosos, {Fallidos} fallidos",
@@ -96,7 +96,7 @@ public class FacturaProcessingService
     }
 
     /// <summary>
-    /// Procesa un único archivo XML
+    /// Procesa un Ãºnico archivo XML
     /// </summary>
     private async Task<FileProcessingResult> ProcessSingleFileAsync(IFormFile file)
     {
@@ -107,21 +107,21 @@ public class FacturaProcessingService
 
         try
         {
-            // Validar extensión
+            // Validar extensiÃ³n
             if (!file.FileName.EndsWith(".xml", StringComparison.OrdinalIgnoreCase))
             {
                 result.Success = false;
-                result.ErrorMessage = "El archivo no tiene extensión .xml";
+                result.ErrorMessage = "El archivo no tiene extensiÃ³n .xml";
                 _logger.LogWarning("Archivo rechazado: {FileName} - No es XML", file.FileName);
                 return result;
             }
 
-            // Validar tamaño (opcional, por si lo necesitas)
+            // Validar tamaÃ±o (opcional, por si lo necesitas)
             if (file.Length == 0)
             {
                 result.Success = false;
-                result.ErrorMessage = "El archivo está vacío";
-                _logger.LogWarning("Archivo rechazado: {FileName} - Vacío", file.FileName);
+                result.ErrorMessage = "El archivo estÃ¡ vacÃ­o";
+                _logger.LogWarning("Archivo rechazado: {FileName} - VacÃ­o", file.FileName);
                 return result;
             }
 
@@ -135,7 +135,7 @@ public class FacturaProcessingService
             if (factura == null)
             {
                 result.Success = false;
-                result.ErrorMessage = "No se pudo extraer información del XML";
+                result.ErrorMessage = "No se pudo extraer informaciÃ³n del XML";
                 return result;
             }
 
@@ -159,7 +159,7 @@ public class FacturaProcessingService
         catch (Exception ex)
         {
             result.Success = false;
-            result.ErrorMessage = $"Excepción: {ex.Message}";
+            result.ErrorMessage = $"ExcepciÃ³n: {ex.Message}";
             _logger.LogError(ex, "Error procesando archivo {FileName}", file.FileName);
             return result;
         }
